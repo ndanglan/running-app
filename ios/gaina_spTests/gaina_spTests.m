@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface gaina_spTests : XCTestCase
+@interface DSCSportTests : XCTestCase
 
 @end
 
-@implementation gaina_spTests
+@implementation DSCSportTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {

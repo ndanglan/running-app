@@ -1,5 +1,5 @@
 {
-  "name": "gaina_sp",
+  "name": "dscsport",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -10,10 +10,10 @@
     "start": "react-native start",
     "test": "jest",
     "coverage": "yarn test --coverage --watchAll --collectCoverageFrom='src/**/*.{js,jsx,ts,tsx}'",
-    "android:dev": "react-native run-android --mode=developmentDebug --appId=com.gaina_sp.development",
-    "android:stag": "react-native run-android --mode=stagingRelease --appId=com.gaina_sp.staging",
-    "android:prod": "react-native run-android --mode=productionRelease --appId=com.gaina_sp",
-    "android:prod:debug": "react-native run-android --mode=productionDebug --appId=com.gaina_sp",
+    "android:dev": "react-native run-android --mode=developmentDebug --appId=com.dscsport.development",
+    "android:stag": "react-native run-android --mode=stagingRelease --appId=com.dscsport.staging",
+    "android:prod": "react-native run-android --mode=productionRelease --appId=com.dscsport",
+    "android:prod:debug": "react-native run-android --mode=productionDebug --appId=com.dscsport",
     "build:dev:apk": "cd android && ./gradlew clean && ./gradlew assembleDevelopmentRelease && cd .. && open ./android/app/build/outputs",
     "build:stag:apk": "cd android && ./gradlew clean && ./gradlew assembleStagingRelease && cd .. && open ./android/app/build/outputs",
     "build:prod:apk": "cd android && ./gradlew clean && ./gradlew assembleProductionRelease && cd .. && open ./android/app/build/outputs",

@@ -27,7 +27,7 @@
                BlueprintIdentifier = "510170522C352CA400C27B6B"
                BuildableName = "gaina_sp_staging.app"
                BlueprintName = "gaina_sp_staging"
-               ReferencedContainer = "container:gaina_sp.xcodeproj">
+               ReferencedContainer = "container:DSCSport.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -56,7 +56,7 @@
             BlueprintIdentifier = "510170522C352CA400C27B6B"
             BuildableName = "gaina_sp_staging.app"
             BlueprintName = "gaina_sp_staging"
-            ReferencedContainer = "container:gaina_sp.xcodeproj">
+            ReferencedContainer = "container:DSCSport.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -73,7 +73,7 @@
             BlueprintIdentifier = "510170522C352CA400C27B6B"
             BuildableName = "gaina_sp_staging.app"
             BlueprintName = "gaina_sp_staging"
-            ReferencedContainer = "container:gaina_sp.xcodeproj">
+            ReferencedContainer = "container:DSCSport.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

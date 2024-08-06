@@ -24,9 +24,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "gaina_sp.app"
-               BlueprintName = "gaina_sp"
-               ReferencedContainer = "container:gaina_sp.xcodeproj">
+               BuildableName = "DSCSport.app"
+               BlueprintName = "DSCSport"
+               ReferencedContainer = "container:DSCSport.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,9 +42,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "gaina_spTests.xctest"
-               BlueprintName = "gaina_spTests"
-               ReferencedContainer = "container:gaina_sp.xcodeproj">
+               BuildableName = "DSCSportTests.xctest"
+               BlueprintName = "DSCSportTests"
+               ReferencedContainer = "container:DSCSport.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -64,9 +64,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "gaina_sp.app"
-            BlueprintName = "gaina_sp"
-            ReferencedContainer = "container:gaina_sp.xcodeproj">
+            BuildableName = "DSCSport.app"
+            BlueprintName = "DSCSport"
+            ReferencedContainer = "container:DSCSport.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -81,9 +81,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "gaina_sp.app"
-            BlueprintName = "gaina_sp"
-            ReferencedContainer = "container:gaina_sp.xcodeproj">
+            BuildableName = "DSCSport.app"
+            BlueprintName = "DSCSport"
+            ReferencedContainer = "container:DSCSport.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

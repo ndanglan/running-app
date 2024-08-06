@@ -1,4 +1,4 @@
-package com.gaina_sp;
+package com.dsc.sport;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

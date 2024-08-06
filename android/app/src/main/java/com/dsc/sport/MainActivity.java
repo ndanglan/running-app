@@ -1,4 +1,4 @@
-package com.gaina_sp;
+package com.dsc.sport;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -13,7 +13,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "gaina_sp";
+    return "DSC Sport";
   }
 
   /**
