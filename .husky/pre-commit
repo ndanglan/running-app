@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "\n🎙️ John Cena: Are you sure about that? 😎"
+sleep 1
+
+ yarn lint && yarn test
+
