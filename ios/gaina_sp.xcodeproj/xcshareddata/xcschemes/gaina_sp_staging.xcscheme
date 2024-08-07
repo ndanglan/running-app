@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1530"
-   version = "1.7">
+   version = "2.2">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES"
@@ -11,7 +11,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;echo &quot;.env.production&quot; &gt; /tmp/envfile&#10;">
+               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;echo &quot;.env.staging&quot; &gt; /tmp/envfile&#10;">
             </ActionContent>
          </ExecutionAction>
       </PreActions>
@@ -25,15 +25,52 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "510170522C352CA400C27B6B"
-               BuildableName = "gaina_sp_staging.app"
-               BlueprintName = "gaina_sp_staging"
+               BuildableName = "dsc_sport_staging.app"
+               BlueprintName = "dsc_sport_staging"
                ReferencedContainer = "container:DSCSport.xcodeproj">
             </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "510170522C352CA400C27B6B"
+               BuildableName = "dsc_sport_staging.app"
+               BlueprintName = "dsc_sport_staging"
+               ReferencedContainer = "container:dsc_sport.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "510170522C352CA400C27B6B"
+               BuildableName = "gaina_sp_staging.app"
+               BlueprintName = "gaina_sp_staging"
+               ReferencedContainer = "container:gaina_sp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <AutocreatedTestPlanReference>
+            </AutocreatedTestPlanReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
@@ -49,6 +86,24 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;echo &quot;.env.staging&quot; &gt; /tmp/envfile&#10;">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "510170522C352CA400C27B6B"
+                     BuildableName = "gaina_sp_staging.app"
+                     BlueprintName = "gaina_sp_staging"
+                     ReferencedContainer = "container:gaina_sp.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
@@ -56,9 +111,18 @@
             BlueprintIdentifier = "510170522C352CA400C27B6B"
             BuildableName = "gaina_sp_staging.app"
             BlueprintName = "gaina_sp_staging"
-            ReferencedContainer = "container:DSCSport.xcodeproj">
+            ReferencedContainer = "container:gaina_sp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "510170522C352CA400C27B6B"
+            BuildableName = "dsc_sport_staging.app"
+            BlueprintName = "dsc_sport_staging"
+            ReferencedContainer = "container:DSCSport.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -71,17 +135,44 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "510170522C352CA400C27B6B"
-            BuildableName = "gaina_sp_staging.app"
-            BlueprintName = "gaina_sp_staging"
-            ReferencedContainer = "container:DSCSport.xcodeproj">
+            BuildableName = "dsc_sport_staging.app"
+            BlueprintName = "dsc_sport_staging"
+            ReferencedContainer = "container:dsc_sport.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "510170522C352CA400C27B6B"
+            BuildableName = "dsc_sport_staging.app"
+            BlueprintName = "dsc_sport_staging"
+            ReferencedContainer = "container:dsc_sport.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug">
+      buildConfiguration = "Release">
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
       revealArchiveInOrganizer = "YES">
+      <PreActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "# Type a script or drag a script file from your workspace to insert its path.&#10;# Type a script or drag a script file from your workspace to insert its path.&#10;echo &quot;.env.staging&quot; &gt; /tmp/envfile&#10;">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "510170522C352CA400C27B6B"
+                     BuildableName = "gaina_sp_staging.app"
+                     BlueprintName = "gaina_sp_staging"
+                     ReferencedContainer = "container:gaina_sp.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PreActions>
    </ArchiveAction>
 </Scheme>

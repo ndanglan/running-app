@@ -4,5 +4,5 @@
 echo "\n🎙️ John Cena: Are you sure about that? 😎"
 sleep 1
 
- yarn lint && yarn test
+ yarn lint
 

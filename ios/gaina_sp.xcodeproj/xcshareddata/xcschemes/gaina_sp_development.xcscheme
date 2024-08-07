@@ -56,9 +56,18 @@
             BlueprintIdentifier = "5101703F2C352C8B00C27B6B"
             BuildableName = "gaina_sp_development.app"
             BlueprintName = "gaina_sp_development"
-            ReferencedContainer = "container:DSCSport.xcodeproj">
+            ReferencedContainer = "container:gaina_sp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5101703F2C352C8B00C27B6B"
+            BuildableName = "gaina_sp_development.app"
+            BlueprintName = "gaina_sp_development"
+            ReferencedContainer = "container:DSCSport.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "IDEPreferLogStreaming"
@@ -83,6 +92,15 @@
             ReferencedContainer = "container:DSCSport.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "5101703F2C352C8B00C27B6B"
+            BuildableName = "gaina_sp_development.app"
+            BlueprintName = "gaina_sp_development"
+            ReferencedContainer = "container:DSCSport.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

@@ -1,0 +1,10 @@
+//
+//  Config.xcconfig
+//  gaina_sp_staging
+//
+//  Created by huuhao on 07/08/2024.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+#include? "tmp.xcconfig"

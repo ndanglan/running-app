@@ -23,7 +23,7 @@ apiService.interceptors.request.use(
     }
     config.timeout = 20000;
     if (token) {
-      config.headers.Authorization = `Bearer ${token.accessToken}`;
+      config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
   },

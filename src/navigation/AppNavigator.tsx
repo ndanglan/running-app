@@ -7,19 +7,15 @@
 
 import React from 'react';
 
-import {
-  NavigationContainer,
-  //   NavigatorScreenParams,
-} from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
 import {
   createNativeStackNavigator,
   NativeStackScreenProps,
 } from '@react-navigation/native-stack';
-
-import * as Screens from '../screens';
-import {BottomNavigator} from './BottomNavigator';
-import {navigationRef} from './navigation-utilities';
-import {RouteName} from './route-name';
+import {navigationRef} from 'navigation/navigation-utilities';
+import {RouteName} from 'navigation/route-name';
+import {useAppSelector} from 'redux_';
+import * as Screens from 'screens';
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -49,25 +45,15 @@ export type AppStackScreenProps<T extends keyof AppStackParamList> =
 const Stack = createNativeStackNavigator<AppStackParamList>();
 
 const AppStack = () => {
-  const isAuthenticated = false;
+  const user = useAppSelector(state => state.auth.user);
   return (
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
       }}
-      initialRouteName={isAuthenticated ? 'Welcome' : 'Login'}>
-      {isAuthenticated ? (
-        <>
-          <Stack.Screen
-            name={RouteName.Login}
-            component={Screens.LoginScreen}
-          />
-        </>
-      ) : (
-        <>
-          <Stack.Screen name={RouteName.Welcome} component={BottomNavigator} />
-        </>
-      )}
+      initialRouteName={user?.client_id ? 'Welcome' : 'Login'}>
+      <Stack.Screen name={RouteName.Login} component={Screens.LoginScreen} />
+      <Stack.Screen name={RouteName.Welcome} component={Screens.HomeScreen} />
     </Stack.Navigator>
   );
 };

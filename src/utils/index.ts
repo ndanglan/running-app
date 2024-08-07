@@ -12,4 +12,7 @@ const verticalScale = (size: number): number =>
 const moderateScale = (size: number, factor = 0.5): number =>
   size + (scale(size) - size) * factor;
 
-export {moderateScale, scale, verticalScale};
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
+export {moderateScale, scale, verticalScale, windowWidth, windowHeight};

@@ -12,10 +12,10 @@ import {
   REGISTER,
   REHYDRATE,
 } from 'redux-persist';
-import {authenticatedApi} from 'redux_/api/authenticated.api';
+import {authenticatedApi} from 'redux_/api';
 import {reduxStorage} from 'services';
 
-import {authReducer} from '../slice';
+import {authReducer, networkReducer} from '../slice';
 
 //
 const persistConfig = {
@@ -26,6 +26,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   auth: authReducer,
+  network: networkReducer,
   [authenticatedApi.reducerPath]: authenticatedApi.reducer,
 });
 

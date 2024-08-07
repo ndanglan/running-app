@@ -1,9 +1,10 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {authenticatedApi, CreateUserResponse} from 'redux_/api';
 
 export interface AuthState {
   isSignedIn: boolean;
   token: string | null;
-  user: any | null; //fix later
+  user: CreateUserResponse | null; //fix later
   lang: string;
 }
 
@@ -38,7 +39,15 @@ export const authSlice = createSlice({
       }
     },
   },
-  //   extraReducers: builder => {},
+  extraReducers: builder => {
+    // Pass the action creator to `builder.addCase()`
+    builder.addMatcher(
+      authenticatedApi.endpoints.createUser.matchFulfilled,
+      (state, action) => {
+        state.user = action.payload;
+      },
+    );
+  },
 });
 
 export const {signOut, signUp} = authSlice.actions;

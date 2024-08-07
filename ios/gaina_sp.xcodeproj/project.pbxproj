@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* DSCSportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* DSCSportTests.m */; };
+		00E356F31AD99517003FC87E /* gaina_spTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* gaina_spTests.m */; };
 		0C80B921A6F3F58F76C31292 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2E4F4186CC25B6B724078437 /* libPods-DSCSport-gaina_sp_development.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 061CB8B8A47256A6F89772F1 /* libPods-DSCSport-gaina_sp_development.a */; };
+		4A6F52832C633C5F009BFA45 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 4A6F52822C633C5F009BFA45 /* Config.xcconfig */; };
 		510170432C352C8B00C27B6B /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		510170442C352C8B00C27B6B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		510170482C352C8B00C27B6B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -33,34 +34,35 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = "DSCSport";
+			remoteInfo = DSCSport;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* DSCSportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DSCSportTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* DSCSportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DSCSportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* DSCSportTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "DSCSportTests.m"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* gaina_spTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = gaina_spTests.m; path = gaina_spTests/gaina_spTests.m; sourceTree = "<group>"; };
 		061CB8B8A47256A6F89772F1 /* libPods-DSCSport-gaina_sp_development.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DSCSport-gaina_sp_development.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11E12B9A08ECB488FCD56B11 /* Pods-DSCSport-gaina_sp_staging.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSCSport-gaina_sp_staging.debug.xcconfig"; path = "Target Support Files/Pods-DSCSport-gaina_sp_staging/Pods-DSCSport-gaina_sp_staging.debug.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* DSCSport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DSCSport.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "DSCSport/AppDelegate.h"; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = "DSCSport/AppDelegate.mm"; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "DSCSport/Images.xcassets"; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "DSCSport/Info.plist"; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "DSCSport/main.m"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* DSCSport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSCSport.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = gaina_sp/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = gaina_sp/AppDelegate.mm; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = gaina_sp/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = gaina_sp/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = gaina_sp/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-DSCSport-DSCSportTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DSCSport-DSCSportTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		256754B982431D30C7F9991C /* Pods-DSCSport-gaina_sp_development.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSCSport-gaina_sp_development.debug.xcconfig"; path = "Target Support Files/Pods-DSCSport-gaina_sp_development/Pods-DSCSport-gaina_sp_development.debug.xcconfig"; sourceTree = "<group>"; };
 		29BF9E414EF8CFE9A2EA2E1E /* libPods-DSCSport-gaina_sp_staging.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DSCSport-gaina_sp_staging.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A8FCF64071BD167F73D894 /* Pods-DSCSport-gaina_sp_development.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSCSport-gaina_sp_development.release.xcconfig"; path = "Target Support Files/Pods-DSCSport-gaina_sp_development/Pods-DSCSport-gaina_sp_development.release.xcconfig"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-DSCSport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSCSport.debug.xcconfig"; path = "Target Support Files/Pods-DSCSport/Pods-DSCSport.debug.xcconfig"; sourceTree = "<group>"; };
+		4A6F52822C633C5F009BFA45 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		510170502C352C8B00C27B6B /* gaina_sp_development.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gaina_sp_development.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		510170512C352C8C00C27B6B /* gaina_sp_development-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "gaina_sp_development-Info.plist"; path = "/Users/pionero/Documents/Workspace/App/DSCSport/ios/gaina_sp_development-Info.plist"; sourceTree = "<absolute>"; };
+		510170512C352C8C00C27B6B /* gaina_sp_development-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "gaina_sp_development-Info.plist"; path = "/Users/huuhao/Documents/dsc/dsc_sport/ios/gaina_sp_development-Info.plist"; sourceTree = "<absolute>"; };
 		510170632C352CA400C27B6B /* gaina_sp_staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gaina_sp_staging.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		510170642C352CA400C27B6B /* gaina_sp_staging-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "gaina_sp_staging-Info.plist"; path = "/Users/pionero/Documents/Workspace/App/DSCSport/ios/gaina_sp_staging-Info.plist"; sourceTree = "<absolute>"; };
+		510170642C352CA400C27B6B /* gaina_sp_staging-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "gaina_sp_staging-Info.plist"; path = "/Users/huuhao/Documents/dsc/dsc_sport/ios/gaina_sp_staging-Info.plist"; sourceTree = "<absolute>"; };
 		5709B34CF0A7D63546082F79 /* Pods-DSCSport.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSCSport.release.xcconfig"; path = "Target Support Files/Pods-DSCSport/Pods-DSCSport.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-DSCSport-DSCSportTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSCSport-DSCSportTests.debug.xcconfig"; path = "Target Support Files/Pods-DSCSport-DSCSportTests/Pods-DSCSport-DSCSportTests.debug.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "DSCSport/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = gaina_sp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-DSCSport-DSCSportTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSCSport-DSCSportTests.release.xcconfig"; path = "Target Support Files/Pods-DSCSport-DSCSportTests/Pods-DSCSport-DSCSportTests.release.xcconfig"; sourceTree = "<group>"; };
 		97FF1371B099DBD25F0EAC78 /* libPods-DSCSport.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DSCSport.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC55522FA2D0A63CF90E67F0 /* Pods-DSCSport-gaina_sp_staging.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSCSport-gaina_sp_staging.release.xcconfig"; path = "Target Support Files/Pods-DSCSport-gaina_sp_staging/Pods-DSCSport-gaina_sp_staging.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,10 +109,10 @@
 		00E356EF1AD99517003FC87E /* DSCSportTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* DSCSportTests.m */,
+				00E356F21AD99517003FC87E /* gaina_spTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = "DSCSportTests";
+			path = DSCSportTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -131,7 +133,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = "DSCSport";
+			name = DSCSport;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -156,6 +158,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				4A6F52822C633C5F009BFA45 /* Config.xcconfig */,
 				13B07FAE1A68108700A75B9A /* DSCSport */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* DSCSportTests */,
@@ -237,8 +240,8 @@
 			);
 			dependencies = (
 			);
-			name = "DSCSport";
-			productName = "DSCSport";
+			name = DSCSport;
+			productName = DSCSport;
 			productReference = 13B07F961A680F5B00A75B9A /* DSCSport.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -260,7 +263,7 @@
 			dependencies = (
 			);
 			name = gaina_sp_development;
-			productName = "DSCSport";
+			productName = DSCSport;
 			productReference = 510170502C352C8B00C27B6B /* gaina_sp_development.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -276,13 +279,14 @@
 				5101705D2C352CA400C27B6B /* Bundle React Native code and images */,
 				5101705E2C352CA400C27B6B /* [CP] Embed Pods Frameworks */,
 				5101705F2C352CA400C27B6B /* [CP] Copy Pods Resources */,
+				4A6F52842C633CCE009BFA45 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = gaina_sp_staging;
-			productName = "DSCSport";
+			productName = DSCSport;
 			productReference = 510170632C352CA400C27B6B /* gaina_sp_staging.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -303,7 +307,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "DSCSport" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "gaina_sp" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -355,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5101705B2C352CA400C27B6B /* LaunchScreen.storyboard in Resources */,
+				4A6F52832C633C5F009BFA45 /* Config.xcconfig in Resources */,
 				5101705C2C352CA400C27B6B /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +399,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DSCSport/Pods-DSCSport-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		4A6F52842C633CCE009BFA45 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${SRCROOT}/../node_modules/react-native-config/ios/ReactNativeConfig/BuildXCConfig.rb\" \"${SRCROOT}/..\" \"${SRCROOT}/tmp.xcconfig\"\n\n";
 		};
 		510170402C352C8B00C27B6B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -698,7 +720,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* DSCSportTests.m in Sources */,
+				00E356F31AD99517003FC87E /* gaina_spTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,7 +771,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "DSCSportTests/Info.plist";
+				INFOPLIST_FILE = DSCSportTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -761,7 +783,7 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dsc.sport";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsc.sport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DSCSport.app/DSCSport";
 			};
@@ -772,8 +794,11 @@
 			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-DSCSport-DSCSportTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = "DSCSportTests/Info.plist";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = DSCSportTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -785,8 +810,9 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dsc.sport";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsc.sport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DSCSport.app/DSCSport";
 			};
 			name = Release;
@@ -799,8 +825,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = "DSCSport/Info.plist";
-             INFOPLIST_KEY_CFBundleDisplayName = "DSC Sport";
+				INFOPLIST_FILE = DSCSport/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = gaina;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -812,8 +837,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dsc.sport";
-				PRODUCT_NAME = "DSCSport";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsc.sport;
+				PRODUCT_NAME = DSCSport;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -827,8 +852,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = "DSCSport/Info.plist";
-             INFOPLIST_KEY_CFBundleDisplayName = "DSC Sport";
+				INFOPLIST_FILE = DSCSport/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = gaina;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -840,8 +864,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dsc.sport";
-				PRODUCT_NAME = "DSCSport";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsc.sport;
+				PRODUCT_NAME = DSCSport;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -854,9 +878,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5BVG93B2XL;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "gaina_sp_development-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = gaina_sp_dev;
+				INFOPLIST_KEY_CFBundleDisplayName = "Dsc Sport Dev";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -867,7 +892,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dsc.sport";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsc.sport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -882,8 +907,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "gaina_sp_development-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = gaina_sp_dev;
+				INFOPLIST_KEY_CFBundleDisplayName = "Dsc Sport Dev";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -894,7 +920,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dsc.sport";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsc.sport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -908,20 +934,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5BVG93B2XL;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "gaina_sp_staging-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = gaina_sp_;
+				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
+				INFOPLIST_PREFIX_HEADER = "${BUILD_DIR}/GeneratedInfoPlistDotEnv.h";
+				INFOPLIST_PREPROCESS = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dsc.sport";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsc.sport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -935,20 +965,25 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5BVG93B2XL;
 				INFOPLIST_FILE = "gaina_sp_staging-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = gaina_sp_;
+				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
+				INFOPLIST_PREFIX_HEADER = "${BUILD_DIR}/GeneratedInfoPlistDotEnv.h";
+				INFOPLIST_PREPROCESS = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.dsc.sport";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsc.sport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -957,6 +992,7 @@
 		};
 		83CBBA201A601CBA00E9B192 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A6F52822C633C5F009BFA45 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -1005,6 +1041,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
+				INFOPLIST_PREFIX_HEADER = "${BUILD_DIR}/GeneratedInfoPlistDotEnv.h";
+				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
@@ -1026,7 +1065,6 @@
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
-					" ",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
@@ -1037,6 +1075,7 @@
 		};
 		83CBBA211A601CBA00E9B192 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A6F52822C633C5F009BFA45 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -1081,6 +1120,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
+				INFOPLIST_PREFIX_HEADER = "${BUILD_DIR}/GeneratedInfoPlistDotEnv.h";
+				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
@@ -1101,7 +1143,6 @@
 					"-DFOLLY_NO_CONFIG",
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
-					" ",
 				);
 				OTHER_LDFLAGS = "$(inherited)";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
@@ -1150,7 +1191,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "DSCSport" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "gaina_sp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
