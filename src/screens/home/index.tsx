@@ -1,13 +1,22 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {StyleSheet, Text, TouchableHighlight, View} from 'react-native';
+import {
+  PermissionsAndroid,
+  PermissionStatus,
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  View,
+} from 'react-native';
 
-import RNLocation, {Location} from 'react-native-location';
+import Geolocation from 'react-native-geolocation-service';
 
 import {AppImage} from 'components';
 import {AppContainer} from 'components/AppContainer';
 import dayjs from 'dayjs';
 import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
+import haversine from 'haversine-distance';
 import {useAppSelector} from 'redux_';
 import {
   useStartActivityMutation,
@@ -20,10 +29,19 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 
 const INTERVAL_TO_UPDATE = 30000; // 2phut
+const CONFIG: Geolocation.GeoOptions = {
+  enableHighAccuracy: true,
+  timeout: 15000,
+  maximumAge: 10000,
+  accuracy: {android: 'balanced', ios: 'best'},
+  distanceFilter: 10,
+  forceRequestLocation: true,
+  forceLocationManager: true,
+};
 
 export const HomeScreen = () => {
   const locationSubscription = useRef<any>();
-  const [location, setLocation] = useState<Location | null>();
+  const [location, setLocation] = useState<Geolocation.GeoCoordinates | null>();
   const [times, setTimes] = useState<number>(0);
   const [time, setTime] = useState('00:00:00');
   const [granted, setGranted] = useState<boolean>(false);
@@ -33,6 +51,7 @@ export const HomeScreen = () => {
   const startTimeRef = useRef<any>();
   const intervalUpdateAvt = useRef<any>();
   const locationRef = useRef<any>();
+  const distanceRef = useRef<number>(0);
 
   const user = useAppSelector(state => state.auth.user);
 
@@ -40,7 +59,10 @@ export const HomeScreen = () => {
   const [stopActivity] = useStopActivityMutation();
   const [updateActivity] = useUpdateActivityMutation();
 
-  const _startUpdatingLocation = useCallback(async () => {
+  const _startUpdatingLocation = async () => {
+    if (distanceRef.current) {
+      distanceRef.current = 0;
+    }
     if (interval?.current) {
       return;
     }
@@ -58,37 +80,46 @@ export const HomeScreen = () => {
             .format('HH:mm:ss');
           setTime(formattedTime);
         }, 1000);
-
-        RNLocation.configure({
-          distanceFilter: 100, // Meters
-          desiredAccuracy: {
-            ios: 'best',
-            android: 'balancedPowerAccuracy',
-          },
-          // Android only
-          androidProvider: 'auto',
-          interval: 120000, // Milliseconds
-          fastestInterval: 10000, // Milliseconds
-          maxWaitTime: 5000, // Milliseconds
-          // iOS Only
-          activityType: 'other',
-          allowsBackgroundLocationUpdates: false,
-          headingFilter: 1, // Degrees
-          headingOrientation: 'portrait',
-          pausesLocationUpdatesAutomatically: false,
-          showsBackgroundLocationIndicator: false,
-        });
-
-        locationSubscription.current = RNLocation.subscribeToLocationUpdates(
-          locations => {
+        Geolocation.getCurrentPosition(
+          position => {
+            const loc = position.coords;
             setTimes(prev => prev + 1);
-            setLocation(locations[0]);
-            locationRef.current = locations[0];
+            setLocation(loc);
+
+            if (locationRef.current && loc) {
+              distanceRef.current =
+                distanceRef.current +
+                haversine(
+                  {
+                    latitude: Number(
+                      (locationRef?.current?.latitude as number).toFixed(5),
+                    ),
+                    longitude: Number(
+                      (locationRef?.current.longitude as number).toFixed(5),
+                    ),
+                  },
+                  {
+                    latitude: Number((loc?.latitude as number).toFixed(5)),
+                    longitude: Number((loc?.longitude as number).toFixed(5)),
+                  },
+                );
+            }
+            locationRef.current = loc;
+            updateActivity({
+              activity_id: res?.id,
+              lat: Number((loc?.latitude ?? (0 as number)).toFixed(5)),
+              lon: Number((loc?.longitude ?? (0 as number)).toFixed(5)),
+            });
           },
+          error => {
+            // See error code charts below.
+            console.log(error.code, error.message);
+          },
+          CONFIG,
         );
       }
     } catch (error) {}
-  }, [startActivity, user?.client_id]);
+  };
 
   const _stopUpdatingLocation = useCallback(async () => {
     if (!interval.current) {
@@ -100,6 +131,43 @@ export const HomeScreen = () => {
       }).unwrap();
       if (res?.id) {
         setActivityId(undefined);
+        Geolocation.getCurrentPosition(
+          position => {
+            const loc = position.coords;
+            setTimes(prev => prev + 1);
+            setLocation(loc);
+
+            if (locationRef.current && loc) {
+              distanceRef.current =
+                distanceRef.current +
+                haversine(
+                  {
+                    latitude: Number(
+                      (locationRef?.current?.latitude as number).toFixed(5),
+                    ),
+                    longitude: Number(
+                      (locationRef?.current.longitude as number).toFixed(5),
+                    ),
+                  },
+                  {
+                    latitude: Number((loc?.latitude as number).toFixed(5)),
+                    longitude: Number((loc?.longitude as number).toFixed(5)),
+                  },
+                );
+            }
+            locationRef.current = loc;
+            updateActivity({
+              activity_id: res?.id,
+              lat: Number((loc?.latitude ?? (0 as number)).toFixed(5)),
+              lon: Number((loc?.longitude ?? (0 as number)).toFixed(5)),
+            });
+          },
+          error => {
+            // See error code charts below.
+            console.log(error.code, error.message);
+          },
+          CONFIG,
+        );
       }
     } catch (error) {}
     clearInterval(interval.current);
@@ -111,43 +179,31 @@ export const HomeScreen = () => {
     setLocation(null);
     locationRef.current = null;
     setTime('00:00:00');
-  }, [user?.client_id, stopActivity]);
+  }, [user?.client_id, stopActivity, updateActivity]);
 
   useEffect(() => {
-    RNLocation.configure({
-      distanceFilter: 100, // Meters
-      desiredAccuracy: {
-        ios: 'best',
-        android: 'balancedPowerAccuracy',
-      },
-      // Android only
-      androidProvider: 'auto',
-      interval: 5000, // Milliseconds
-      fastestInterval: 10000, // Milliseconds
-      maxWaitTime: 5000, // Milliseconds
-      // iOS Only
-      activityType: 'other',
-      allowsBackgroundLocationUpdates: false,
-      headingFilter: 1, // Degrees
-      headingOrientation: 'portrait',
-      pausesLocationUpdatesAutomatically: false,
-      showsBackgroundLocationIndicator: false,
-    });
+    if (Platform.OS === 'ios') {
+      Geolocation.requestAuthorization('always').then(grant => {
+        setGranted(grant === 'granted');
+      });
+    }
 
-    RNLocation.requestPermission({
-      ios: 'always',
-      android: {
-        detail: 'fine',
-        rationale: {
-          title: 'Location permission',
-          message: 'We use your location to demo the library',
-          buttonPositive: 'OK',
+    if (Platform.OS === 'android') {
+      PermissionsAndroid.request(
+        PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+        {
+          title: 'Cool Photo App Camera Permission',
+          message:
+            'Cool Photo App needs access to your camera ' +
+            'so you can take awesome pictures.',
+          buttonNeutral: 'Ask Me Later',
           buttonNegative: 'Cancel',
+          buttonPositive: 'OK',
         },
-      },
-    }).then(grante => {
-      setGranted(!!grante);
-    });
+      ).then((gran: PermissionStatus) => {
+        setGranted(gran === 'granted');
+      });
+    }
     return () => {
       _stopUpdatingLocation();
     };
@@ -157,11 +213,44 @@ export const HomeScreen = () => {
     if (activityId !== undefined) {
       intervalUpdateAvt.current = setInterval(() => {
         if (activityId !== undefined) {
-          updateActivity({
-            activity_id: activityId,
-            lat: locationRef?.current?.latitude ?? 0,
-            lon: locationRef?.current?.longitude ?? 0,
-          });
+          Geolocation.getCurrentPosition(
+            position => {
+              const loc = position.coords;
+              setTimes(prev => prev + 1);
+              setLocation(loc);
+
+              if (locationRef.current && loc) {
+                distanceRef.current =
+                  distanceRef.current +
+                  haversine(
+                    {
+                      latitude: Number(
+                        (locationRef?.current?.latitude as number).toFixed(5),
+                      ),
+                      longitude: Number(
+                        (locationRef?.current.longitude as number).toFixed(5),
+                      ),
+                    },
+                    {
+                      latitude: Number((loc?.latitude as number).toFixed(5)),
+                      longitude: Number((loc?.longitude as number).toFixed(5)),
+                    },
+                  );
+              }
+              locationRef.current = loc;
+
+              updateActivity({
+                activity_id: activityId,
+                lat: Number((loc?.latitude ?? (0 as number)).toFixed(5)),
+                lon: Number((loc?.longitude ?? (0 as number)).toFixed(5)),
+              });
+            },
+            error => {
+              // See error code charts below.
+              console.log(error.code, error.message);
+            },
+            CONFIG,
+          );
         }
       }, INTERVAL_TO_UPDATE);
     }
@@ -220,7 +309,7 @@ export const HomeScreen = () => {
             fontSize: moderateScale(14),
             color: '#708572',
           }}>
-          Số lần đã cập nhật vị trí: {times}
+          Số lần đã cập nhật vị trí: {times} - {distanceRef?.current}m
         </Text>
       </View>
       <View
@@ -280,7 +369,10 @@ export const HomeScreen = () => {
         </View>
       ) : (
         <View>
-          <Text>
+          <Text
+            style={{
+              textAlign: 'center',
+            }}>
             Hãy cấp quyền truy cập vị trí cho chúng tôi, hoặc liên hệ nhà phát
             triển để giúp đỡ.
           </Text>

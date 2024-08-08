@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Text, View} from 'react-native';
 
 import {Controller, useForm} from 'react-hook-form';
 import DeviceInfo from 'react-native-device-info';
 
 import {AppButton, AppContainer, AppImage, AppInput} from 'components';
+import {navigate, RouteName} from 'navigation';
 import {CreateUserPayload, useCreateUserMutation} from 'redux_/api';
 import {moderateScale, windowWidth} from 'utils';
 
@@ -16,10 +17,12 @@ export const LoginScreen = () => {
     },
     reValidateMode: 'onChange',
   });
-  const [createUser, {isLoading, isError}] = useCreateUserMutation();
-
+  const [createUser, {isLoading, isSuccess, isError, error}] =
+    useCreateUserMutation();
+  const [localPayload, setPayload] = useState<any>();
   const onCreateUser = async (data: CreateUserPayload) => {
     try {
+      if (isLoading) return;
       const result = await Promise.allSettled([
         DeviceInfo.getDeviceName(),
         DeviceInfo.getUniqueId(),
@@ -31,12 +34,18 @@ export const LoginScreen = () => {
         result[1]?.status === 'fulfilled' ? result[1]?.value : '';
       const payload = {
         client_id: `${deviceId}`,
+        // client_id: `${deviceName}-${deviceId}-4444444`,
         email: data.email,
         fullname: data.fullname,
       };
+      setPayload(payload);
       await createUser(payload);
-    } catch (error) {}
+    } catch (err) {}
   };
+
+  useEffect(() => {
+    isSuccess && navigate(RouteName.Welcome);
+  }, [isSuccess]);
 
   return (
     <AppContainer
@@ -63,6 +72,7 @@ export const LoginScreen = () => {
             fontWeight: 'bold',
           }}>
           Đăng Nhập
+          {JSON.stringify(localPayload)}
         </Text>
       </View>
       <View
@@ -124,7 +134,7 @@ export const LoginScreen = () => {
               textAlign: 'center',
               marginVertical: moderateScale(8),
             }}>
-            Đăng nhập thất bại vui lòng thử lại
+            {JSON.stringify(error)}
           </Text>
         )}
 

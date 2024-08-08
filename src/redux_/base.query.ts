@@ -1,5 +1,3 @@
-import Config from 'react-native-config';
-
 import {BaseQueryFn} from '@reduxjs/toolkit/query/react';
 import {AxiosProgressEvent, AxiosRequestConfig} from 'axios';
 import apiService from 'services/api/api.service';
@@ -7,7 +5,9 @@ import apiService from 'services/api/api.service';
 // import {HttpStatus} from 'constants';
 
 export const axiosBaseQuery = (
-  {baseUrl}: {baseUrl?: string} = {baseUrl: Config.API_URL},
+  {baseUrl}: {baseUrl?: string} = {
+    baseUrl: 'https://extgw.dsc.com.vn/tracker',
+  },
 ): BaseQueryFn<{
   url: string;
   method?: AxiosRequestConfig['method'];
@@ -55,6 +55,7 @@ export const axiosBaseQuery = (
         error: {
           status: err?.status,
           data: err?.data,
+          err: err,
         },
       };
     }

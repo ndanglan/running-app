@@ -16,3 +16,5 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 export {moderateScale, scale, verticalScale, windowWidth, windowHeight};
+
+export * from './distance';
