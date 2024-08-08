@@ -28,7 +28,7 @@ import {moderateScale} from 'utils';
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-const INTERVAL_TO_UPDATE = 30000; // 2phut
+// const INTERVAL_TO_UPDATE = 30000; // 2phut
 const CONFIG: Geolocation.GeoOptions = {
   enableHighAccuracy: true,
   timeout: 15000,
@@ -211,48 +211,66 @@ export const HomeScreen = () => {
 
   useEffect(() => {
     if (activityId !== undefined) {
-      intervalUpdateAvt.current = setInterval(() => {
-        if (activityId !== undefined) {
-          Geolocation.getCurrentPosition(
-            position => {
-              const loc = position.coords;
-              setTimes(prev => prev + 1);
-              setLocation(loc);
+      Geolocation.watchPosition(
+        position => {
+          const loc = position.coords;
+          setTimes(prev => prev + 1);
+          setLocation(loc);
 
-              if (locationRef.current && loc) {
-                distanceRef.current =
-                  distanceRef.current +
-                  haversine(
-                    {
-                      latitude: Number(
-                        (locationRef?.current?.latitude as number).toFixed(5),
-                      ),
-                      longitude: Number(
-                        (locationRef?.current.longitude as number).toFixed(5),
-                      ),
-                    },
-                    {
-                      latitude: Number((loc?.latitude as number).toFixed(5)),
-                      longitude: Number((loc?.longitude as number).toFixed(5)),
-                    },
-                  );
-              }
-              locationRef.current = loc;
+          if (locationRef.current && loc) {
+            distanceRef.current =
+              distanceRef.current +
+              haversine(
+                {
+                  latitude: Number(
+                    (locationRef?.current?.latitude as number).toFixed(5),
+                  ),
+                  longitude: Number(
+                    (locationRef?.current.longitude as number).toFixed(5),
+                  ),
+                },
+                {
+                  latitude: Number((loc?.latitude as number).toFixed(5)),
+                  longitude: Number((loc?.longitude as number).toFixed(5)),
+                },
+              );
+          }
+          locationRef.current = loc;
 
-              updateActivity({
-                activity_id: activityId,
-                lat: Number((loc?.latitude ?? (0 as number)).toFixed(5)),
-                lon: Number((loc?.longitude ?? (0 as number)).toFixed(5)),
-              });
-            },
-            error => {
-              // See error code charts below.
-              console.log(error.code, error.message);
-            },
-            CONFIG,
-          );
-        }
-      }, INTERVAL_TO_UPDATE);
+          updateActivity({
+            activity_id: activityId,
+            lat: Number((loc?.latitude ?? (0 as number)).toFixed(5)),
+            lon: Number((loc?.longitude ?? (0 as number)).toFixed(5)),
+          });
+        },
+        error => {
+          console.log(error);
+        },
+        {
+          enableHighAccuracy: true, // Adjust accuracy as needed
+          distanceFilter: 10, // Minimum distance (in meters) to update the location
+          interval: 15000, // Update interval (in milliseconds), 15 seconds
+          fastestInterval: 15000, // Fastest update interval (in milliseconds), 15 seconds
+          accuracy: {
+            android: 'balanced',
+            ios: 'best',
+          },
+          showsBackgroundLocationIndicator: true,
+          useSignificantChanges: true,
+        },
+      );
+      // intervalUpdateAvt.current = setInterval(() => {
+      //   if (activityId !== undefined) {
+      //     // Geolocation.getCurrentPosition(
+      //     //   position => {},
+      //     //   error => {
+      //     //     // See error code charts below.
+      //     //     console.log(error.code, error.message);
+      //     //   },
+      //     //   CONFIG,
+      //     // );
+      //   }
+      // }, INTERVAL_TO_UPDATE);
     }
   }, [activityId, updateActivity]);
 
