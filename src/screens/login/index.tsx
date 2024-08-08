@@ -22,7 +22,9 @@ export const LoginScreen = () => {
   const [localPayload, setPayload] = useState<any>();
   const onCreateUser = async (data: CreateUserPayload) => {
     try {
-      if (isLoading) return;
+      if (isLoading) {
+        return;
+      }
       const result = await Promise.allSettled([
         DeviceInfo.getDeviceName(),
         DeviceInfo.getUniqueId(),
